@@ -19,7 +19,7 @@ body {
 
     padding: 15px 40px;
 
-    background: rgba(15, 23, 42, 0.7);
+    background: rgba(15, 23, 42, 0.85); /* más sólido */
     backdrop-filter: blur(10px);
 
     border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -36,13 +36,24 @@ body {
 
 /* LINKS */
 .nav-links a {
-    color: white;
+    color: white !important;              /* 🔥 fuerza el color */
     margin-left: 20px;
     text-decoration: none;
     position: relative;
+    font-weight: 500;
 }
 
-/* EFECTO HOVER PRO */
+/* EVITAR MORADO DE LINKS VISITADOS */
+.nav-links a:visited {
+    color: white !important;
+}
+
+/* HOVER TEXTO */
+.nav-links a:hover {
+    color: #22c55e;
+}
+
+/* EFECTO SUBRAYADO PRO */
 .nav-links a::after {
     content: "";
     position: absolute;
@@ -57,6 +68,7 @@ body {
 .nav-links a:hover::after {
     width: 100%;
 }
+
 /* HERO */
 .hero {
     height: 100vh;
