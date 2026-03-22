@@ -14,15 +14,25 @@ body {
     width: 100%;
 
     display: flex;
-    justify-content: center;   /* 🔥 centra todo */
-    
-    padding: 15px 0;
+    justify-content: center;
 
     background: rgba(15, 23, 42, 0.85);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255,255,255,0.1);
 
     z-index: 1000;
+}
+
+/* CONTENEDOR INTERNO */
+.nav-container {
+    width: 100%;
+    max-width: 1000px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 20px;
 }
 
 /* LOGO */
@@ -34,14 +44,14 @@ body {
 
 /* LINKS */
 .nav-links a {
-    color: white !important;              /* 🔥 fuerza el color */
+    color: white !important;
     margin-left: 20px;
     text-decoration: none;
     position: relative;
     font-weight: 500;
 }
 
-/* EVITAR MORADO DE LINKS VISITADOS */
+/* EVITAR MORADO */
 .nav-links a:visited {
     color: white !important;
 }
@@ -51,7 +61,7 @@ body {
     color: #22c55e;
 }
 
-/* EFECTO SUBRAYADO PRO */
+/* SUBRAYADO ANIMADO */
 .nav-links a::after {
     content: "";
     position: absolute;
