@@ -84,7 +84,12 @@ body {
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    color: #22c55e;
 }
 
 /* SECCIONES */
