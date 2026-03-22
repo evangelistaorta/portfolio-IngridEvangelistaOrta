@@ -35,12 +35,6 @@ body {
     padding: 15px 20px;
 }
 
-/* LOGO */
-.logo {
-    font-weight: bold;
-    color: #22c55e;
-    font-family: monospace;
-}
 
 /* LINKS */
 .nav-links a {
