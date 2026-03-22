@@ -3,30 +3,60 @@ body {
     font-family: 'Segoe UI', sans-serif;
     background: radial-gradient(circle at top, #1e293b, #0f172a);
     color: white;
+    padding-top: 80px;
 }
 
-/* MENÚ */
-
-.menu {
+/* NAVBAR */
+.navbar {
     position: fixed;
-    top: 10px;
-    right: 20px;
-    background: rgba(30, 41, 59, 0.8);
-    padding: 10px 20px;
-    border-radius: 10px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 40px;
+
+    background: rgba(15, 23, 42, 0.7);
     backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+
+    z-index: 1000;
 }
 
-.menu a {
-    color: white;
-    margin-left: 15px;
-    text-decoration: none;
-}
-
-.menu a:hover {
+/* LOGO */
+.logo {
+    font-weight: bold;
     color: #22c55e;
+    font-family: monospace;
 }
 
+/* LINKS */
+.nav-links a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    position: relative;
+}
+
+/* EFECTO HOVER PRO */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #22c55e;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
 /* HERO */
 .hero {
     height: 100vh;
