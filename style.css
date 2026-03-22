@@ -4,6 +4,15 @@ body {
     background: radial-gradient(circle at top, #1e293b, #0f172a);
     color: white;
     padding-top: 80px;
+    
+
+    background-color: #020617;
+
+    background-image:
+        linear-gradient(rgba(59,130,246,0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59,130,246,0.15) 1px, transparent 1px);
+
+    background-size: 40px 40px;
 }
 
 .content {
@@ -245,6 +254,34 @@ body {
     .profile-card {
         flex-direction: column;
         text-align: center;
+    }
+}
+
+#typing::after {
+    content: "_";
+    margin-left: 5px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
+
+.profile-card {
+    animation: boot 0.8s ease-out;
+}
+
+@keyframes boot {
+    0% {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        filter: blur(0);
     }
 }
 
