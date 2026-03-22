@@ -18,30 +18,24 @@ body {
 
     background: rgba(15, 23, 42, 0.85);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
 
     z-index: 1000;
 }
 
-/* CONTENEDOR INTERNO */
 .nav-container {
     width: 100%;
     max-width: 1000px;
 
     display: flex;
-    justify-content: center;   /* 🔥 centrado total */
+    justify-content: center;
     align-items: center;
 
     padding: 15px 20px;
 }
 
-/* LINKS */
-.nav-links a {
-    color: white !important;
-    margin-left: 20px;
-    text-decoration: none;
-    position: relative;
-    font-weight: 500;
+.nav-links {
+    display: flex;
+    gap: 40px; /* 🔥 clave para separación uniforme */
 }
 
 /* EVITAR MORADO */
