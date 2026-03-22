@@ -46,11 +46,15 @@ body {
 }
 
 /* HOVER TEXTO */
-.nav-links a:hover {
-    color: #22c55e;
+.nav-links a {
+    display: inline-block;   /* 🔥 IMPORTANTE */
+    color: white;
+    text-decoration: none;
+    position: relative;
+    font-weight: 500;
 }
 
-/* SUBRAYADO ANIMADO */
+/* SUBRAYADO */
 .nav-links a::after {
     content: "";
     position: absolute;
@@ -65,7 +69,6 @@ body {
 .nav-links a:hover::after {
     width: 100%;
 }
-
 /* HERO */
 .hero {
     height: 100vh;
