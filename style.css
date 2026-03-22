@@ -7,7 +7,6 @@ body {
 }
 
 /* NAVBAR */
-/* NAVBAR */
 .navbar {
     position: fixed;
     top: 0;
@@ -24,51 +23,53 @@ body {
     z-index: 1000;
 }
 
-/* LINKS */
+/* LINKS CONTENEDOR */
 .nav-links {
     display: flex;
     gap: 40px;
+    align-items: center;
 }
 
+/* LINKS */
 .nav-links a {
+    display: inline-block;
+    position: relative;
+
     color: white;
     text-decoration: none;
     font-weight: 500;
-}
-
-.nav-links a:hover {
-    color: #22c55e;
 }
 
 /* EVITAR MORADO */
 .nav-links a:visited {
-    color: white !important;
+    color: white;
 }
 
 /* HOVER TEXTO */
-.nav-links a {
-    display: inline-block;   /* 🔥 IMPORTANTE */
-    color: white;
-    text-decoration: none;
-    position: relative;
-    font-weight: 500;
+.nav-links a:hover {
+    color: #22c55e;
 }
 
-/* SUBRAYADO */
+/* SUBRAYADO PERFECTO */
 .nav-links a::after {
     content: "";
     position: absolute;
-    width: 0%;
+
+    width: 0;
     height: 2px;
     background: #22c55e;
-    left: 0;
+
+    left: 50%;
     bottom: -5px;
-    transition: 0.3s;
+
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover::after {
     width: 100%;
 }
+
 /* HERO */
 .hero {
     height: 100vh;
@@ -77,9 +78,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     text-align: center;
     font-family: monospace;
 }
+
 .hero h1 {
     font-size: 2.5rem;
 }
