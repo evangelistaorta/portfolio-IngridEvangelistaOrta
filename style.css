@@ -78,16 +78,51 @@ body {
 }
 
 /* HERO */
+/* HERO CENTRADO */
 .hero {
     height: 100vh;
-
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
 
-    text-align: center;
-    font-family: monospace;
+/* TARJETA */
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    background: rgba(30, 41, 59, 0.6);
+    padding: 40px;
+    border-radius: 20px;
+
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* FOTO */
+.foto {
+    width: 180px;
+    border-radius: 50%;
+    border: 3px solid #22c55e;
+}
+
+/* INFO */
+.info h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.info h2 {
+    color: #22c55e;
+    margin-top: 10px;
+}
+
+/* BOTONES */
+.buttons {
+    margin-top: 20px;
 }
 
 .hero h1 {
