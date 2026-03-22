@@ -325,3 +325,13 @@ body {
 
     transition: width 0.6s;
 }
+
+.bar div {
+    animation: loadSkill 1s ease;
+}
+
+@keyframes loadSkill {
+    from {
+        width: 0;
+    }
+}
