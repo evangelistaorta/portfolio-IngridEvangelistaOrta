@@ -387,3 +387,16 @@ body {
         padding: 40px 20px;
     }
 }
+
+@media (max-width: 768px) {
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
