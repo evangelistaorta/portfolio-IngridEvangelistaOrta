@@ -85,6 +85,10 @@ body {
     justify-content: center;
     align-items: center;
 }
+.profile-card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
 
 /* TARJETA */
 .profile-card {
