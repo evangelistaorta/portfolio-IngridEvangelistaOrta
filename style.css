@@ -76,7 +76,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 10%;
+
+    align-items: center;
+    text-align: center;
+
     font-family: monospace;
 }
 
