@@ -1,10 +1,14 @@
+/* ================== VARIABLES ================== */
+:root {
+    --main-color: #3b82f6; /* 🔵 color principal */
+}
+
+/* ================== BODY ================== */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: radial-gradient(circle at top, #1e293b, #0f172a);
     color: white;
     padding-top: 80px;
-    
 
     background-color: #020617;
 
@@ -13,111 +17,79 @@ body {
         linear-gradient(90deg, rgba(59,130,246,0.15) 1px, transparent 1px);
 
     background-size: 40px 40px;
+
+    animation: moveGrid 20s linear infinite;
 }
 
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    padding: 40px;
-    text-align: center;
+@keyframes moveGrid {
+    from { background-position: 0 0; }
+    to { background-position: 40px 40px; }
 }
 
-.content h1 {
-    font-size: 2.5rem;
-    margin: 0;
-}
-
-.content h2 {
-    color: #3b82f6; /* 🔵 nuevo color */
-    margin-top: 10px;
-}
-
-/* NAVBAR */
+/* ================== NAVBAR ================== */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-
     display: flex;
     justify-content: center;
-
     padding: 15px 0;
-
     background: rgba(15, 23, 42, 0.85);
     backdrop-filter: blur(10px);
-
     z-index: 1000;
 }
 
-/* LINKS CONTENEDOR */
 .nav-links {
     display: flex;
     gap: 40px;
     align-items: center;
 }
 
-/* LINKS */
 .nav-links a {
-    display: inline-block;
     position: relative;
-
-    color: white;
     text-decoration: none;
+    color: white;
     font-weight: 500;
 }
 
-/* EVITAR MORADO */
 .nav-links a:visited {
     color: white;
 }
 
-/* HOVER TEXTO */
 .nav-links a:hover {
-    color: #22c55e;
+    color: var(--main-color);
 }
 
-/* SUBRAYADO PERFECTO */
+/* SUBRAYADO */
 .nav-links a::after {
     content: "";
     position: absolute;
-
     width: 0;
     height: 2px;
-    background: #22c55e;
-
+    background: var(--main-color);
     left: 50%;
     bottom: -5px;
-
     transform: translateX(-50%);
-    transition: width 0.3s ease;
+    transition: width 0.3s;
 }
 
 .nav-links a:hover::after {
     width: 100%;
 }
 
-/* HERO */
-/* HERO CENTRADO */
+/* ================== HERO ================== */
 .hero {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.profile-card:hover {
-    transform: translateY(-5px);
-    transition: 0.3s;
-}
 
-/* TARJETA */
-/* TARJETA TIPO VENTANA */
+/* ================== TARJETA ================== */
 .profile-card {
     width: 90%;
     max-width: 700px;
-    min-height: 500px;   /* 🔥 más alta */
+    min-height: 500px;
 
     background: #0f172a;
     border-radius: 15px;
@@ -127,13 +99,19 @@ body {
     box-shadow: 0 20px 60px rgba(0,0,0,0.7);
 
     overflow: hidden;
+
+    animation: boot 0.8s ease-out;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
 }
 
 /* BARRA SUPERIOR */
 .window-bar {
     display: flex;
     gap: 8px;
-
     padding: 10px;
     background: #020617;
 }
@@ -146,62 +124,75 @@ body {
 
 .window-bar span:nth-child(1) { background: #ef4444; }
 .window-bar span:nth-child(2) { background: #f59e0b; }
-.window-bar span:nth-child(3) { background: #3b82f6; } /* 🔵 azul */
-/* FOTO */
-.foto {
-    width: 180px;
-    border-radius: 50%;
-    border: 3px solid #22c55e;
+.window-bar span:nth-child(3) { background: var(--main-color); }
+
+/* CONTENIDO */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
 }
 
-/* INFO */
-.info h1 {
-    font-size: 3rem;
+/* FOTO */
+.foto {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+
+    border-radius: 50%;
+    border: 2px solid var(--main-color);
+
+    margin-bottom: 20px;
+}
+
+/* TEXTO */
+.content h1 {
+    font-size: 2.5rem;
     margin: 0;
 }
 
-.info h2 {
-    font-size: 1.6rem;
-    color: #22c55e;
+.content h2 {
+    color: var(--main-color);
     margin-top: 10px;
 }
 
-/* BOTONES */
+/* ================== BOTONES ================== */
 .buttons {
     margin-top: 20px;
 }
+
 .btn {
-    border: 1px solid #3b82f6;
-    color: #3b82f6;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+
+    text-decoration: none;
+    border-radius: 8px;
 }
 
 .btn:hover {
-    background: #3b82f6;
+    background: var(--main-color);
     color: white;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-.hero h2 {
-    color: #22c55e;
-}
-
-/* SECCIONES */
+/* ================== SECCIONES ================== */
 .section {
     padding: 80px 10%;
 }
 
-/* PROYECTOS */
+/* ================== PROYECTOS ================== */
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
-/* TARJETAS */
 .card {
     background: #1e293b;
     padding: 25px;
@@ -213,32 +204,16 @@ body {
     transform: translateY(-6px);
 }
 
-/* SKILLS */
+/* ================== SKILLS ================== */
 .skills span {
-    background: #22c55e;
+    background: rgba(59,130,246,0.2);
     padding: 8px 14px;
     border-radius: 20px;
     margin: 5px;
     display: inline-block;
 }
 
-/* BOTONES */
-.btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    border: 1px solid #22c55e;
-    color: #22c55e;
-    text-decoration: none;
-    border-radius: 8px;
-}
-
-.btn:hover {
-    background: #22c55e;
-    color: black;
-}
-
-/* ANIMACIONES */
+/* ================== ANIMACIONES ================== */
 .fade {
     opacity: 0;
     transform: translateY(20px);
@@ -250,13 +225,7 @@ body {
     transform: translateY(0);
 }
 
-@media (max-width: 768px) {
-    .profile-card {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
+/* CURSOR TERMINAL */
 #typing::after {
     content: "_";
     margin-left: 5px;
@@ -268,10 +237,7 @@ body {
     25%, 75% { opacity: 0; }
 }
 
-.profile-card {
-    animation: boot 0.8s ease-out;
-}
-
+/* ANIMACIÓN TARJETA */
 @keyframes boot {
     0% {
         opacity: 0;
@@ -285,17 +251,9 @@ body {
     }
 }
 
-body {
-    animation: moveGrid 20s linear infinite;
-}
-
-@keyframes moveGrid {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 40px 40px;
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .profile-card {
+        text-align: center;
     }
 }
-
-
