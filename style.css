@@ -7,14 +7,16 @@ body {
 }
 
 /* NAVBAR */
+/* NAVBAR */
 .navbar {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
 
     display: flex;
     justify-content: center;
+
+    padding: 15px 0;
 
     background: rgba(15, 23, 42, 0.85);
     backdrop-filter: blur(10px);
@@ -22,20 +24,20 @@ body {
     z-index: 1000;
 }
 
-.nav-container {
-    width: 100%;
-    max-width: 1000px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 15px 20px;
-}
-
+/* LINKS */
 .nav-links {
     display: flex;
-    gap: 40px; /* 🔥 clave para separación uniforme */
+    gap: 40px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #22c55e;
 }
 
 /* EVITAR MORADO */
