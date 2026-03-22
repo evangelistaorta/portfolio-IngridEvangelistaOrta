@@ -29,12 +29,11 @@ body {
     max-width: 1000px;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;   /* 🔥 centrado total */
     align-items: center;
 
     padding: 15px 20px;
 }
-
 
 /* LINKS */
 .nav-links a {
