@@ -1,5 +1,5 @@
 // EFECTO ESCRITURA
-const text = "> Estudiante de Ingeniería de Computadores\r\n> Construyendo mi camino en el desarrollo de software";
+const text = "> Estudiante de Ingeniería de Computadores\r\n>;
 let i = 0;
 const speed = 40;
 
