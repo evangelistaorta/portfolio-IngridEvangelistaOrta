@@ -5,6 +5,28 @@ body {
     color: white;
 }
 
+/* MENÚ */
+
+.menu {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    background: rgba(30, 41, 59, 0.8);
+    padding: 10px 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.menu a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: #22c55e;
+}
+
 /* HERO */
 .hero {
     height: 100vh;
