@@ -40,17 +40,15 @@ body {
 }
 
 .nav-links {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-}
+        flex-wrap: wrap;       
+        justify-content: center;
+        gap: 15px;
+    }
 
-.nav-links a {
-    position: relative;
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-}
+    .nav-links a {
+        font-size: 0.9rem;     
+        padding: 5px;
+    }
 
 .nav-links a:visited {
     color: white;
