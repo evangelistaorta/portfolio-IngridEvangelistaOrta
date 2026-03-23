@@ -270,8 +270,8 @@ body {
     box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 
     opacity: 0;
-    visibility: hidden;   /* 🔥 clave */
-    pointer-events: none; /* 🔥 evita clics cuando está oculto */
+    visibility: hidden;  
+    pointer-events: none; 
 
     transition: all 0.25s ease;
 
@@ -395,4 +395,42 @@ body {
 
 .contact-item a:hover {
     color: var(--main-color);
+}
+
+/* ================== CONTACTO MÓVIL ================== */
+@media (max-width: 768px) {
+
+    .contact-card {
+        width: 90%;
+        padding: 25px;
+        border-radius: 12px;
+    }
+
+    .contact-card h1 {
+        font-size: 1.6rem;
+    }
+
+    .contact-card p {
+        font-size: 0.9rem;
+    }
+
+    .contact-list {
+        gap: 12px;
+    }
+
+    .contact-item {
+        justify-content: flex-start;  
+        padding: 14px;
+        gap: 12px;
+    }
+
+    .contact-item span {
+        font-size: 1.2rem;
+    }
+
+    .contact-item a,
+    .contact-item p {
+        font-size: 0.95rem;
+        word-break: break-word; 
+    }
 }
