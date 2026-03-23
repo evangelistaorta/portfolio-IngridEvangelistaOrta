@@ -408,4 +408,50 @@ body {
     }
 }
 
+/* BOTÓN HAMBURGUESA */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: white;
+}
+
+/* ================== MÓVIL ================== */
+@media (max-width: 768px) {
+
+    /* MOSTRAR ICONO */
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        left: 20px;
+    }
+
+    /* OCULTAR LINKS */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+
+        background: rgba(15, 23, 42, 0.95);
+        padding: 20px 0;
+    }
+
+    /* CUANDO ESTÁ ABIERTO */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* LINKS GRANDES Y CLICABLES */
+    .nav-links a {
+        font-size: 1.2rem;
+        padding: 10px 0;
+    }
+
+}
+
 }
