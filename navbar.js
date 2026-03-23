@@ -13,3 +13,5 @@ fetch("navbar.html")
       });
     }
   });
+
+document.body.classList.toggle("menu-open");
