@@ -533,3 +533,74 @@ body {
     font-weight: 600;
     letter-spacing: 0.5px;
 }
+
+/* ================== LAYOUT GLOBAL ================== */
+
+.section {
+    padding: 80px 10%;
+    display: flex;
+    justify-content: center;
+}
+
+/* ================== CARDS UNIFICADAS ================== */
+
+.about-card,
+.skills-container,
+.contact-card {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    box-sizing: border-box;
+
+    /* ✨ movimiento */
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* ✨ hover elegante */
+.about-card:hover,
+.skills-container:hover,
+.contact-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 
+        0 25px 60px rgba(0,0,0,0.7),
+        0 0 50px rgba(59,130,246,0.15);
+}
+
+/* ================== RESPONSIVE ================== */
+
+@media (max-width: 768px) {
+
+    .section {
+        padding: 40px 15px;
+    }
+
+    .about-card,
+    .skills-container,
+    .contact-card {
+        width: 100%;
+        padding: 25px;
+        border-radius: 14px;
+    }
+
+    .about-card h1,
+    .skills-container h1,
+    .contact-card h1 {
+        font-size: 1.6rem;
+    }
+
+    .contact-item {
+        justify-content: flex-start;
+        padding: 14px;
+        gap: 12px;
+    }
+
+    .contact-item span {
+        font-size: 1.2rem;
+    }
+
+    .contact-item a,
+    .contact-item p {
+        font-size: 0.95rem;
+        word-break: break-word;
+    }
+}
