@@ -346,55 +346,53 @@ body {
     z-index: 998;
 }
 }
-/* ================== CONTACTO TERMINAL ================== */
+/* ================== CONTACTO ================== */
 
-.contact-terminal {
-    max-width: 700px;
+.contact-card {
+    max-width: 600px;
     margin: auto;
 
-    background: #020617;
-    padding: 30px;
-    border-radius: 12px;
+    background: #0f172a;
+    padding: 40px;
+    border-radius: 15px;
 
-    border: 1px solid rgba(59,130,246,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
 
-    font-family: monospace;
-    box-shadow: 0 0 30px rgba(59,130,246,0.2);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+
+    text-align: center;
 }
 
-/* PROMPT */
-.prompt {
-    color: var(--main-color);
+.contact-list {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-/* OUTPUT */
-.output {
-    margin-left: 10px;
-    margin-bottom: 15px;
-    opacity: 0.8;
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    background: rgba(255,255,255,0.03);
+    padding: 12px;
+
+    border-radius: 10px;
+
+    transition: 0.2s;
 }
 
-/* INFO */
-.contact-info p {
-    margin: 10px 0;
+.contact-item:hover {
+    background: rgba(59,130,246,0.1);
 }
 
-.contact-info a {
+.contact-item a {
     color: white;
     text-decoration: none;
-    border-bottom: 1px solid rgba(59,130,246,0.5);
 }
 
-.contact-info a:hover {
+.contact-item a:hover {
     color: var(--main-color);
-}
-
-/* CURSOR */
-.contact-terminal p:last-child {
-    animation: blink 1s infinite;
-}
-
-@keyframes blink {
-    0%, 50%, 100% { opacity: 1; }
-    25%, 75% { opacity: 0; }
 }
