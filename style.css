@@ -346,3 +346,55 @@ body {
     z-index: 998;
 }
 }
+/* ================== CONTACTO TERMINAL ================== */
+
+.contact-terminal {
+    max-width: 700px;
+    margin: auto;
+
+    background: #020617;
+    padding: 30px;
+    border-radius: 12px;
+
+    border: 1px solid rgba(59,130,246,0.3);
+
+    font-family: monospace;
+    box-shadow: 0 0 30px rgba(59,130,246,0.2);
+}
+
+/* PROMPT */
+.prompt {
+    color: var(--main-color);
+}
+
+/* OUTPUT */
+.output {
+    margin-left: 10px;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+/* INFO */
+.contact-info p {
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(59,130,246,0.5);
+}
+
+.contact-info a:hover {
+    color: var(--main-color);
+}
+
+/* CURSOR */
+.contact-terminal p:last-child {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
