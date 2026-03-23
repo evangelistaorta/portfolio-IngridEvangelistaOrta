@@ -247,13 +247,12 @@ body {
 
     /* MENÚ OVERLAY */
    .nav-links {
-    display: none;
     flex-direction: column;
 
     position: fixed;
     top: 70px;
     left: 50%;
-    transform: translateX(-50%) translateY(-10px);
+    transform: translateX(-50%) translateY(-20px);
 
     width: 85%;
     max-width: 320px;
@@ -271,15 +270,20 @@ body {
     box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 
     opacity: 0;
+    visibility: hidden;   /* 🔥 clave */
+    pointer-events: none; /* 🔥 evita clics cuando está oculto */
+
     transition: all 0.25s ease;
 
     z-index: 999;
 }
 
    .nav-links.active {
-    display: flex;
-    transform: translateX(-50%) translateY(0);
     opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translateX(-50%) translateY(0);
 }
     .nav-links a {
     font-size: 1rem;
@@ -331,4 +335,7 @@ body {
     .section {
         padding: 40px 20px;
     }
+    body.menu-open {
+    overflow: hidden;
+}
 }
