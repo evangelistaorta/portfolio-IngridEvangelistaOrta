@@ -388,12 +388,22 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+
+    @media (max-width: 768px) {
+
     .buttons {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
     }
+
+    .btn {
+        width: 80%;           /* 🔥 controla el tamaño */
+        text-align: center;
+    }
+}
 
     .btn {
         width: 100%;
