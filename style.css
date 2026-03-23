@@ -383,7 +383,7 @@ body {
     }
 
     .nav-links a {
-        font-size: 1rem;
+        font-size: 0.7rem;
         padding: 10px; /* 🔥 hace más fácil pulsar */
     }
 
