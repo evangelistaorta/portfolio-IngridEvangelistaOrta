@@ -4,38 +4,55 @@
     <meta charset="UTF-8">
     <title>Contacto - Ingrid</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<div id="navbar-container"></div>
+<!-- NAVBAR (copiado directamente) -->
+<nav class="navbar">
+    <div class="menu-toggle" id="menu-toggle">☰</div>
 
-<!-- CONTACTO -->
+    <div class="nav-links" id="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="sobre-mi.html">Sobre mí</a>
+        <a href="skills.html">Skills</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="contacto.html">Contacto</a>
+    </div>
+</nav>
+
+<!-- CONTENIDO -->
 <section class="section">
 
-    <div class="contact-terminal fade">
+    <div class="contact-card">
 
-        <p><span class="prompt">ingrid@portfolio:~$</span> whoami</p>
-        <p class="output">Estudiante de Ingeniería Informática 💻</p>
+        <h1>Contacto</h1>
+        <p>Puedes encontrarme aquí 👇</p>
 
-        <p><span class="prompt">ingrid@portfolio:~$</span> contact --show</p>
+        <div class="contact-list">
 
-        <div class="contact-info">
+            <div class="contact-item">
+                <span>📧</span>
+                <a href="mailto:tuemail@gmail.com">tuemail@gmail.com</a>
+            </div>
 
-            <p>📧 <a href="mailto:evangelistaorta@hotmail.com">evangelistaorta@hotmail.com</a></p>
+            <div class="contact-item">
+                <span>💼</span>
+                <a href="https://github.com/" target="_blank">GitHub</a>
+            </div>
 
-            <p>💼 <a href="https://github.com/evangelistaorta" target="_blank">GitHub</a></p>
+            <div class="contact-item">
+                <span>🔗</span>
+                <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+            </div>
 
-            <p>🔗 <a href="https://www.linkedin.com/in/ingrid-evangelista-orta-482aa4315/?skipRedirect=true" target="_blank">LinkedIn</a></p>
-
-            <p>📍 Sevilla, España</p>
+            <div class="contact-item">
+                <span>📍</span>
+                <p>Sevilla, España</p>
+            </div>
 
         </div>
-
-        <p><span class="prompt">ingrid@portfolio:~$</span> _</p>
 
     </div>
 
