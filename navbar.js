@@ -14,7 +14,6 @@ fetch("navbar.html")
     }
   });
 
-document.body.classList.toggle("menu-open");
 
 toggle.addEventListener("click", () => {
     links.classList.toggle("active");
