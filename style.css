@@ -335,7 +335,14 @@ body {
     .section {
         padding: 40px 20px;
     }
-    body.menu-open {
-    overflow: hidden;
+    body.menu-open::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.5); /* oscurece */
+    backdrop-filter: blur(4px);     /* desenfoque */
+
+    z-index: 998;
 }
 }
