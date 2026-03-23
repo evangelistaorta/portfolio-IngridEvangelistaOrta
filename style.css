@@ -103,19 +103,26 @@ body {
 
     /* OCULTAR MENU */
     .nav-links {
-        display: none;
-        flex-direction: column;
-        gap: 20px;
+    display: none;
+    flex-direction: column;
 
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
 
-        background: rgba(15, 23, 42, 0.95);
-        padding: 20px 0;
-        text-align: center;
-    }
+    width: 90%;
+    border-radius: 12px;
+
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(12px);
+
+    padding: 15px 0;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+
+    text-align: center;
+}
 
     /* MOSTRAR */
     .nav-links.active {
