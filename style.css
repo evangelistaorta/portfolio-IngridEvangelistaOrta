@@ -1,6 +1,7 @@
 /* ================== VARIABLES ================== */
 :root {
     --main-color: #3b82f6;
+    --card-bg: #0f172a; /* 🔥 color unificado de cards */
 }
 
 /* ================== BODY ================== */
@@ -34,7 +35,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
     padding: 20px 0;
 
     background: rgba(15, 23, 42, 0.85);
@@ -43,13 +43,11 @@ body {
     z-index: 1000;
 }
 
-/* LINKS */
 .nav-links {
     display: flex;
     gap: 30px;
 }
 
-/* LINKS ESTILO */
 .nav-links a {
     position: relative;
     color: white;
@@ -57,12 +55,10 @@ body {
     font-weight: 600;
 }
 
-/* HOVER */
 .nav-links a:hover {
     color: var(--main-color);
 }
 
-/* SUBRAYADO */
 .nav-links a::after {
     content: "";
     position: absolute;
@@ -95,19 +91,25 @@ body {
     align-items: center;
 }
 
-/* ================== TARJETA ================== */
+/* ================== CARDS GENERALES ================== */
+.profile-card,
+.skills-container,
+.contact-card,
+.about-card,
+.card {
+    background: var(--card-bg);
+}
+
+/* ================== PROFILE CARD ================== */
 .profile-card {
     width: 90%;
     max-width: 700px;
     min-height: 500px;
 
-    background: #0f172a;
     border-radius: 15px;
-
     border: 1px solid rgba(255,255,255,0.1);
 
     box-shadow: 0 20px 60px rgba(0,0,0,0.7);
-
     overflow: hidden;
 
     animation: boot 0.8s ease-out;
@@ -146,7 +148,6 @@ body {
     text-align: center;
 }
 
-/* FOTO */
 .foto {
     width: 160px;
     height: 160px;
@@ -156,7 +157,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* TEXTO */
 .content h1 {
     font-size: 2.5rem;
     margin: 0;
@@ -171,7 +171,6 @@ body {
 .buttons {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 15px;
     width: 35%;
 }
@@ -194,6 +193,8 @@ body {
 /* ================== SECCIONES ================== */
 .section {
     padding: 80px 10%;
+    display: flex;
+    justify-content: center;
 }
 
 /* ================== PROYECTOS ================== */
@@ -204,7 +205,6 @@ body {
 }
 
 .card {
-    background: #1e293b;
     padding: 25px;
     border-radius: 12px;
     transition: 0.3s;
@@ -215,32 +215,20 @@ body {
 }
 
 /* ================== SKILLS ================== */
-
 .skills-container {
     max-width: 800px;
     margin: auto;
-
-    background: #0f172a;
     padding: 40px;
     border-radius: 18px;
 
     border: 1px solid rgba(255,255,255,0.08);
-
     box-shadow: 0 15px 40px rgba(0,0,0,0.6);
 }
 
-/* TITULO */
-.skills-container h1 {
-    margin-top: 0;
-    margin-bottom: 25px;
-}
-
-/* CADA SKILL */
 .skill {
     margin-bottom: 20px;
 }
 
-/* TEXTO */
 .skill span {
     display: block;
     margin-bottom: 6px;
@@ -248,7 +236,6 @@ body {
     opacity: 0.9;
 }
 
-/* BARRA */
 .bar {
     width: 100%;
     height: 10px;
@@ -257,155 +244,37 @@ body {
     overflow: hidden;
 }
 
-/* PROGRESO */
+/* 🔥 ANIMACIÓN */
+@keyframes fillBar {
+    from { width: 0; }
+    to { width: var(--level); }
+}
+
 .bar div {
     height: 100%;
+    width: 0;
+
     background: linear-gradient(90deg, #3b82f6, #60a5fa);
     border-radius: 20px;
 
-    transition: width 0.6s ease;
+    animation: fillBar 1.5s ease forwards;
+
+    box-shadow: 0 0 10px rgba(59,130,246,0.6);
 }
 
-/* HOVER EFECTO */
 .skill:hover .bar div {
     filter: brightness(1.2);
+    box-shadow: 0 0 20px rgba(59,130,246,1);
 }
 
-/* ================== ANIMACIONES ================== */
-.fade {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.6s;
-}
-
-.fade.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* ================== MÓVIL ================== */
-@media (max-width: 768px) {
-
-    /* BOTÓN HAMBURGUESA */
-    .menu-toggle {
-        display: block;
-        position: absolute;
-        left: 50px;
-    }
-
-    /* MENÚ OVERLAY */
-   .nav-links {
-    flex-direction: column;
-
-    position: fixed;
-    top: 90px;
-    left: 50%;
-    transform: translateX(-50%) translateY(-20px);
-
-    width: 85%;
-    max-width: 320px;
-
-    background: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(16px);
-
-    border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.08);
-
-    padding: 30px 0;
-
-    text-align: center;
-
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-
-    opacity: 0;
-    visibility: hidden;  
-    pointer-events: none; 
-
-    transition: all 0.25s ease;
-
-    z-index: 999;
-}
-
-   .nav-links.active {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-
-    transform: translateX(-50%) translateY(0);
-}
-    .nav-links a {
-    font-size: 1rem;
-    padding: 12px 20px;
-    margin: 4px 10px;
-
-    border-radius: 10px;
-
-    transition: 0.2s;
-}
-
-.nav-links a:hover {
-    background: rgba(59,130,246,0.15);
-}
-    /* HERO */
-    .hero {
-        padding: 20px;
-        height: auto;
-    }
-
-    .profile-card {
-        width: 95%;
-        min-height: auto;
-    }
-
-    .content h1 {
-        font-size: 1.5rem;
-    }
-
-    .content h2 {
-        font-size: 1rem;
-    }
-
-    .foto {
-        width: 120px;
-        height: 120px;
-    }
-
-    .buttons {
-        flex-direction: column;
-        width: 90%;
-    }
-
-    .btn {
-        width: 80%;
-        text-align: center;
-    }
-
-    .section {
-        padding: 40px 20px;
-    }
-    body.menu-open::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    background: rgba(0, 0, 0, 0.5); /* oscurece */
-    backdrop-filter: blur(4px);     /* desenfoque */
-
-    z-index: 998;
-}
-}
 /* ================== CONTACTO ================== */
-
 .contact-card {
     max-width: 600px;
     margin: auto;
-
-    background: #0f172a;
     padding: 40px;
     border-radius: 15px;
 
     border: 1px solid rgba(255,255,255,0.1);
-
     box-shadow: 0 10px 40px rgba(0,0,0,0.6);
 
     text-align: center;
@@ -426,7 +295,6 @@ body {
 
     background: rgba(255,255,255,0.03);
     padding: 12px;
-
     border-radius: 10px;
 
     transition: 0.2s;
@@ -445,51 +313,10 @@ body {
     color: var(--main-color);
 }
 
-/* ================== CONTACTO MÓVIL ================== */
-@media (max-width: 768px) {
-
-    .contact-card {
-        width: 90%;
-        padding: 25px;
-        border-radius: 12px;
-    }
-
-    .contact-card h1 {
-        font-size: 1.6rem;
-    }
-
-    .contact-card p {
-        font-size: 0.9rem;
-    }
-
-    .contact-list {
-        gap: 12px;
-    }
-
-    .contact-item {
-        justify-content: flex-start;  
-        padding: 14px;
-        gap: 12px;
-    }
-
-    .contact-item span {
-        font-size: 1.2rem;
-    }
-
-    .contact-item a,
-    .contact-item p {
-        font-size: 0.95rem;
-        word-break: break-word; 
-    }
-}
-
-/* ================== SOBRE MÍ ================== */
-
+/* ================== ABOUT ================== */
 .about-card {
     max-width: 800px;
     margin: auto;
-
-    background: linear-gradient(145deg, #0f172a, #020617);
     padding: 50px;
     border-radius: 18px;
 
@@ -503,60 +330,27 @@ body {
     overflow: hidden;
 }
 
-/* glow sutil */
 .about-card::before {
     content: "";
     position: absolute;
     inset: 0;
-
     background: radial-gradient(circle at top right, rgba(59,130,246,0.15), transparent 60%);
     pointer-events: none;
 }
 
-/* TITULO */
-.about-card h1 {
-    margin-top: 0;
-    font-size: 2.2rem;
-}
-
-/* TEXTO */
-.about-card p {
-    line-height: 1.7;
-    opacity: 0.85;
-    margin-bottom: 15px;
-}
-
-/* FRASE FINAL */
 .highlight {
     margin-top: 25px;
     color: var(--main-color);
     font-weight: 600;
-    letter-spacing: 0.5px;
 }
 
-/* ================== LAYOUT GLOBAL ================== */
-
-.section {
-    padding: 80px 10%;
-    display: flex;
-    justify-content: center;
-}
-
-/* ================== CARDS UNIFICADAS ================== */
-
+/* ================== HOVER GLOBAL CARDS ================== */
 .about-card,
 .skills-container,
 .contact-card {
-    width: 100%;
-    max-width: 800px;
-    margin: auto;
-    box-sizing: border-box;
-
-    /* ✨ movimiento */
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* ✨ hover elegante */
 .about-card:hover,
 .skills-container:hover,
 .contact-card:hover {
@@ -566,41 +360,92 @@ body {
         0 0 50px rgba(59,130,246,0.15);
 }
 
-/* ================== RESPONSIVE ================== */
+/* ================== ANIMACIONES ================== */
+.fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.6s;
+}
 
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================== MÓVIL ================== */
 @media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        left: 50px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        position: fixed;
+        top: 90px;
+        left: 50%;
+        transform: translateX(-50%) translateY(-20px);
+
+        width: 85%;
+        max-width: 320px;
+
+        background: rgba(15, 23, 42, 0.85);
+        backdrop-filter: blur(16px);
+
+        border-radius: 16px;
+        border: 1px solid rgba(255,255,255,0.08);
+
+        padding: 30px 0;
+        text-align: center;
+
+        box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transition: all 0.25s ease;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    .hero {
+        padding: 20px;
+        height: auto;
+    }
+
+    .profile-card {
+        width: 95%;
+        min-height: auto;
+    }
+
+    .content h1 { font-size: 1.5rem; }
+    .content h2 { font-size: 1rem; }
+
+    .foto {
+        width: 120px;
+        height: 120px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .btn {
+        width: 80%;
+        text-align: center;
+    }
 
     .section {
         padding: 40px 15px;
-    }
-
-    .about-card,
-    .skills-container,
-    .contact-card {
-        width: 100%;
-        padding: 25px;
-        border-radius: 14px;
-    }
-
-    .about-card h1,
-    .skills-container h1,
-    .contact-card h1 {
-        font-size: 1.6rem;
-    }
-
-    .contact-item {
-        justify-content: flex-start;
-        padding: 14px;
-        gap: 12px;
-    }
-
-    .contact-item span {
-        font-size: 1.2rem;
-    }
-
-    .contact-item a,
-    .contact-item p {
-        font-size: 0.95rem;
-        word-break: break-word;
     }
 }
