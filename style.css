@@ -1,7 +1,7 @@
 /* ================== VARIABLES ================== */
 :root {
     --main-color: #3b82f6;
-    --card-bg: #0f172a; /* 🔥 color unificado de cards */
+    --card-bg: #0f172a;
 }
 
 /* ================== BODY ================== */
@@ -9,7 +9,7 @@ body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     color: white;
-    padding-top: 80px;
+    
 
     background-color: #020617;
 
@@ -78,7 +78,7 @@ body {
 /* ================== HAMBURGUESA ================== */
 .menu-toggle {
     display: none;
-    font-size: 1.8rem;
+    font-size: 2rem;
     cursor: pointer;
     color: white;
 }
@@ -91,7 +91,7 @@ body {
     align-items: center;
 }
 
-/* ================== CARDS GENERALES ================== */
+/* ================== CARDS UNIFICADAS ================== */
 .profile-card,
 .skills-container,
 .contact-card,
@@ -100,11 +100,38 @@ body {
     background: var(--card-bg);
 }
 
+/* ================== ANIMACIÓN GLOBAL CARDS ================== */
+.profile-card,
+.skills-container,
+.contact-card,
+.about-card,
+.card {
+    transition: 
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border 0.25s ease;
+}
+
+.profile-card:hover,
+.skills-container:hover,
+.contact-card:hover,
+.about-card:hover,
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+
+    box-shadow: 
+        0 30px 70px rgba(0,0,0,0.8),
+        0 0 60px rgba(59,130,246,0.2);
+
+    border: 1px solid rgba(59,130,246,0.3);
+}
+
 /* ================== PROFILE CARD ================== */
 .profile-card {
-    width: 90%;
+    width: 80%;
     max-width: 700px;
     min-height: 500px;
+    margin: auto;
 
     border-radius: 15px;
     border: 1px solid rgba(255,255,255,0.1);
@@ -115,12 +142,6 @@ body {
     animation: boot 0.8s ease-out;
 }
 
-.profile-card:hover {
-    transform: translateY(-5px);
-    transition: 0.3s;
-}
-
-/* BARRA SUPERIOR */
 .window-bar {
     display: flex;
     gap: 8px;
@@ -138,7 +159,6 @@ body {
 .window-bar span:nth-child(2) { background: #f59e0b; }
 .window-bar span:nth-child(3) { background: var(--main-color); }
 
-/* CONTENIDO */
 .content {
     display: flex;
     flex-direction: column;
@@ -149,8 +169,8 @@ body {
 }
 
 .foto {
-    width: 160px;
-    height: 160px;
+    width: clamp(120px, 40%, 200px);
+    
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid var(--main-color);
@@ -158,11 +178,12 @@ body {
 }
 
 .content h1 {
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
     margin: 0;
 }
 
 .content h2 {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
     color: var(--main-color);
     margin-top: 10px;
 }
@@ -171,8 +192,10 @@ body {
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 17px;
     width: 35%;
+    width: min(100%, 350px);
+    flex-wrap: wrap;
 }
 
 .btn {
@@ -193,34 +216,63 @@ body {
 /* ================== SECCIONES ================== */
 .section {
     padding: 80px 10%;
-    display: flex;
-    justify-content: center;
+    padding-top: clamp(120px, 8vw, 100px);
+    
 }
 
 /* ================== PROYECTOS ================== */
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
 }
 
-.card {
+/* ================== PROJECT CARD ================== */
+.project-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
     padding: 25px;
-    border-radius: 12px;
-    transition: 0.3s;
+    min-height: 180px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
-    transform: translateY(-6px);
+/* HOVER */
+.project-card:hover {
+    transform: translateY(-10px) scale(1.02);
+
+    box-shadow: 
+        0 30px 70px rgba(0,0,0,0.8),
+        0 0 60px rgba(59,130,246,0.2);
+}
+
+/* TEXTO */
+.project-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    opacity: 0.8;
+    font-size: 0.95rem;
 }
 
 /* ================== SKILLS ================== */
 .skills-container {
-    width: 100%;
-    max-width: 900px; /* 🔥 más ancho */
+    width: 60%;
+    max-width: 60%;
     margin: auto;
+    
 
-    padding: 50px; /* 🔥 más aire */
+    padding: 50px;
     border-radius: 18px;
 
     border: 1px solid rgba(255,255,255,0.08);
@@ -228,25 +280,24 @@ body {
 }
 
 .skill {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .skill span {
     display: block;
-    margin-bottom: 6px;
-    font-size: 0.95rem;
+    margin-bottom: 8px;
+    font-size: 1rem;
     opacity: 0.9;
 }
 
 .bar {
     width: 100%;
-    height: 10px;
+    height: 14px;
     background: rgba(255,255,255,0.08);
     border-radius: 20px;
     overflow: hidden;
 }
 
-/* 🔥 ANIMACIÓN */
 @keyframes fillBar {
     from { width: 0; }
     to { width: var(--level); }
@@ -259,9 +310,9 @@ body {
     background: linear-gradient(90deg, #3b82f6, #60a5fa);
     border-radius: 20px;
 
-    animation: fillBar 1.5s ease forwards;
+    animation: fillBar 2s ease forwards;
 
-    box-shadow: 0 0 10px rgba(59,130,246,0.6);
+    box-shadow: 0 0 12px rgba(59,130,246,0.7);
 }
 
 .skill:hover .bar div {
@@ -269,50 +320,62 @@ body {
     box-shadow: 0 0 20px rgba(59,130,246,1);
 }
 
-/* ================== CONTACTO ================== */
+/* ================== CONTACTO ELEGANTE ================== */
+
 .contact-card {
-    max-width: 600px;
+    max-width: 450px;
     margin: auto;
-    padding: 40px;
-    border-radius: 15px;
+    padding: 50px 40px;
+    background: linear-gradient(145deg, #0f172a, #020617);
+    border: 1px solid rgba(255,255,255,0.06);
 
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    box-shadow: 
+        0 20px 60px rgba(0,0,0,0.6),
+        0 0 30px rgba(59,130,246,0.08);
 
-    text-align: center;
+    border-radius: 18px;
 }
 
-.contact-list {
-    margin-top: 25px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.contact-card h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+
+    margin-bottom: 30px;
 }
 
 .contact-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+    background: transparent;
+    border: none;
 
-    background: rgba(255,255,255,0.03);
-    padding: 12px;
-    border-radius: 10px;
+    padding: 14px 0;
 
-    transition: 0.2s;
+    font-size: 1.3rem;
+
+    border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
 .contact-item:hover {
-    background: rgba(59,130,246,0.1);
+    background: transparent;
+    transform: none;
+    opacity: 0.7;
 }
 
 .contact-item a {
     color: white;
+    opacity: 0.7;
+    font-weight: 400;
     text-decoration: none;
 }
 
 .contact-item a:hover {
     color: var(--main-color);
+    opacity: 1;
+}
+
+.contact-item span {
+    opacity: 0.6;
+    font-size: 1.1rem;
 }
 
 /* ================== ABOUT ================== */
@@ -332,74 +395,39 @@ body {
     overflow: hidden;
 }
 
-.about-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at top right, rgba(59,130,246,0.15), transparent 60%);
-    pointer-events: none;
-}
-
-.highlight {
-    margin-top: 25px;
-    color: var(--main-color);
-    font-weight: 600;
-}
-
-/* ================== HOVER GLOBAL CARDS ================== */
-.about-card,
-.skills-container,
-.contact-card {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.about-card:hover,
-.skills-container:hover,
-.contact-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 
-        0 25px 60px rgba(0,0,0,0.7),
-        0 0 50px rgba(59,130,246,0.15);
-}
-
-/* ================== ANIMACIONES ================== */
-.fade {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.6s;
-}
-
-.fade.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 /* ================== MÓVIL ================== */
+
 @media (max-width: 768px) {
 
     .menu-toggle {
         display: block;
         position: absolute;
-        left: 50px;
+        left: 30px;
+        
+        
+        
     }
 
     .nav-links {
+        display: flex;
         flex-direction: column;
+
         position: fixed;
-        top: 90px;
+        top: 80px;
         left: 50%;
         transform: translateX(-50%) translateY(-20px);
 
-        width: 85%;
-        max-width: 320px;
+        width: 95%;
+        max-width: 400px;
 
-        background: rgba(15, 23, 42, 0.85);
+        background: rgba(15, 23, 42, 0.95);
         backdrop-filter: blur(16px);
 
         border-radius: 16px;
         border: 1px solid rgba(255,255,255,0.08);
 
-        padding: 30px 0;
+        padding: 25px 0;
+
         text-align: center;
 
         box-shadow: 0 20px 40px rgba(0,0,0,0.6);
@@ -416,38 +444,25 @@ body {
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
+
         transform: translateX(-50%) translateY(0);
     }
 
-    .hero {
-        padding: 20px;
-        height: auto;
+    .nav-links a {
+        padding: 12px;
+        border-radius: 10px;
+        margin: 5px 15px;
     }
 
-    .profile-card {
-        width: 95%;
-        min-height: auto;
+    .nav-links a:hover {
+        background: rgba(59,130,246,0.15);
     }
+    .navbar {
+    padding: 30px 0;
 
-    .content h1 { font-size: 1.5rem; }
-    .content h2 { font-size: 1rem; }
+}
+    
 
-    .foto {
-        width: 120px;
-        height: 120px;
-    }
-
-    .buttons {
-        flex-direction: column;
-        width: 90%;
-    }
-
-    .btn {
-        width: 80%;
-        text-align: center;
-    }
-
-    .section {
-        padding: 40px 15px;
-    }
+    
+    
 }
