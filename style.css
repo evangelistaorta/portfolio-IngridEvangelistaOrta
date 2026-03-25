@@ -169,7 +169,7 @@ body {
 }
 
 .foto {
-    width: clamp(40%, 40%, 200px);
+    width: clamp(40%, 40%, 40%);
     
     object-fit: cover;
     border-radius: 50%;
