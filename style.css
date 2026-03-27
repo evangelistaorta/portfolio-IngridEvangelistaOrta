@@ -406,7 +406,7 @@ body {
     
 }
     .profile-card {
-        padding-top: 20%;
+        margin:auto;
     }
 
     .menu-toggle {
