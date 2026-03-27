@@ -400,6 +400,12 @@ body {
 
 @media (max-width: 768px) {
 
+    .foto {
+    width: 20px;
+    height: 20px;
+    
+}
+
     .menu-toggle {
         display: block;
         position: absolute;
